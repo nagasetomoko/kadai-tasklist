@@ -13,7 +13,6 @@
             <div class="collapse navbar-collapse" id="bs-exampple-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if(Auth::check()))
-                        <li><a href="#">Users</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -23,8 +22,7 @@
                             </ul>
                         </li>
                     @else
-                        <li>{!! link_to_route('tasks.create', '新規タスクの登録') !!}</li>
-                        <li>{!! link_to_route('signup.get', '新規ユーザ登録') !!}</li>
+                        <li>{!! link_to_route('signup.get', '新規ユーザー登録') !!}</li>
                         <li>{!! link_to_route('login', 'ログイン') !!}</li>
                     @endif
                 </ul>
