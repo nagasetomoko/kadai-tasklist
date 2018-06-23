@@ -13,15 +13,10 @@ class CreateTasklist extends Migration
      */
      public function up()
     {
-        Schema::table('tasks', function (Blueprint $table) {
-            $table->increment('id');
-            $table->integer('user_id')->unsigned()->index();
+        Schema::create('tasks', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('content',191);
-            $table->string('status',10);
-            $table->timestamp();
-            
-            //外部キー制約
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
     
